@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, RefObject } from "react";
-import { useSection } from "@/src/components/SectionContext";
+import { useSection } from "@/components/SectionContext";
 
 export function useSectionView(
   ref: RefObject<HTMLElement | null>, // Changed to HTMLElement | null

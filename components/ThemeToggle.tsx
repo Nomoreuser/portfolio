@@ -2,7 +2,7 @@
 'use client';
 
 import { useRouter } from "next/navigation"
-import { setTheme } from '@/src/app/action';
+import { setTheme } from '@/app/action';
 
 import { MoonStar, Sun } from 'lucide-react'
 
