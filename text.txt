@@ -1,0 +1,2 @@
+
+link change when InterSectionObserver trigger on each section. ✔️
