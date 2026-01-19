@@ -1,6 +1,6 @@
 
 'use client';
-import { delCookiesTheme } from "../app/action";
+import { delCookiesTheme } from "@/app/action";
 
 export default function DelCookie({theme}: {theme: string}){
 

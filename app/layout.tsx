@@ -4,8 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {cookies} from 'next/headers';
 
-import Header from "../components/Header";
-import { SectionContent } from "../components/SectionContext";
+import { SectionContent } from "@/components/SectionContext";
 
 
 const geistSans = Geist({
