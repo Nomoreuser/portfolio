@@ -1,7 +1,6 @@
 "use client"
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import "./app/globals.css";
 import { motion } from "framer-motion";
 import {Menu, X} from "lucide-react";
 

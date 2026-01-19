@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link";
-import "./app/globals.css";
 import { motion } from "framer-motion";
 
 import { ThemeToggle } from "./ThemeToggle";
