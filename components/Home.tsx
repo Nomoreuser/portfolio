@@ -21,7 +21,10 @@ export default function Home(){
 
     return (
         <section ref={sectionRef} id="home" className="h-full flex items-center">
-        <div>Kupal</div> 
+            <div>
+                Hi, I am Gerald A. Carvajal
+                3rd year BSIT 
+            </div>
         </section>
     )
 }
