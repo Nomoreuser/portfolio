@@ -34,12 +34,12 @@ export default function NavLink(){
         <nav className="h-full flex items-center ">
             <Menu className="lg:hidden block" onClick={(e)=> {toggle ? setToggle(false):setToggle(true); e.stopPropagation()}} />
 
-            <div className={` border-l border-[#8787874e] lg:border-none absolute z-100 top-0 lg:relative h-screen w-1/2 lg:h-fit bg-background lg:right-0 lg:bg-transparent transition-transform ${toggle ? "-right-5 sm:-right-20": "-right-300"}`}>
+            <div className={` border-l border-[#8787874e] lg:border-none absolute z-100 top-0 lg:relative h-screen w-1/2 lg:h-fit bg-background lg:right-0 lg:bg-transparent transition-transform ${toggle ? "-right-5 md:-right-20": "-right-300"}`}>
                 <X className="lg:hidden block right-0 mt-4 mb-7 ml-5" onClick={()=>setToggle(false)}/>
                 <ul className="flex items-center flex-col gap-3 h-full lg:flex-row lg:gap-0">
                     {
                         navLink.map(link => (
-                            <li key={link.name} className="relative px-5">
+                            <li key={link.name} className="relative pl-3 pr-5 m-px">
                                 <Link href={link.hash} className={`${link.name === activeSection ? "text-foreground":"text-gray-600"}`}
                                 onClick={()=> {
                                     setActiveSection(link.name)
@@ -49,10 +49,10 @@ export default function NavLink(){
                                     {link.name}
 
                                     {link.name === activeSection && (
-                                        <motion.span className="absolute inset-0 rounded-full flex justify-between"
-                                        layoutId="active" transition={{type: 'spring', stiffness: 380, damping: 30}}
+                                        <motion.span className="absolute inset-0 flex justify-between"
+                                        layoutId="active" transition={{type: 'spring', stiffness: 580, damping: 30}}
                                         >
-                                            <span className="-mr-10">{"<"}</span>
+                                            <span className="pl">{"<"}</span>
                                             <span>{"/>"}</span>
                                         </motion.span>
                                     )}

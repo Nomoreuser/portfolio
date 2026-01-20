@@ -21,10 +21,7 @@ export default function Home(){
 
     return (
         <section ref={sectionRef} id="home" className="h-full flex items-center">
-            <div>
-                Hi, I am Gerald A. Carvajal
-                3rd year BSIT 
-            </div>
+            <div className="text-center m-auto">Hi, I am Gerald A. Carvajal</div>
         </section>
     )
 }
