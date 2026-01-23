@@ -1,24 +1,22 @@
 
 'use client';
 
-import { useRouter } from "next/navigation"
-import { setTheme } from '@/app/action';
+import { MoonStar, Sun } from 'lucide-react';
+import { useTheme } from "next-themes";
+import { useEffect, useState } from 'react';
 
-import { MoonStar, Sun } from 'lucide-react'
+export function ThemeToggle(){
 
-export function ThemeToggle({currentTheme}: {currentTheme: string}){
+    const {theme, setTheme, resolvedTheme} = useTheme();
+    const [mount, setMount] = useState(false);
+    useEffect(()=>{
+        setMount(true)
+    },[])
 
-    const router = useRouter();
-
-    const toggle = async ()=>{
-
-        const nt = currentTheme == 'dark' ? 'light' : 'dark';
-        await setTheme(nt);
-        router.refresh();
-    }
-
-    return <button onClick={toggle} className="flex items-center m-auto gap-2 text-sm">
-            {currentTheme == 'dark' ? (
+    if(!mount) return null;
+    
+    return <button onClick={()=> setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')} className="flex items-center m-auto gap-2 text-sm">
+            {resolvedTheme === 'dark' ? (
                 <>
                     <Sun className="size-5"/> <span className="hidden lg:block">Light</span>
                 </>

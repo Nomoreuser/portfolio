@@ -13,7 +13,7 @@ export default async function Main() {
 
   return (
     <>
-      <Header currentTheme={theme}/>
+      <Header />
       <main className="h-screen">
         <Home />
         <About />

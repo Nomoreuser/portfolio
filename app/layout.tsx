@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {cookies} from 'next/headers';
+import { ThemeProvider } from "next-themes";
 
 import { SectionContent } from "@/components/SectionContext";
 
@@ -28,18 +28,16 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const cookieStore = await cookies();
-  const theme = cookieStore.get('theme')?.value || 'light';
-
   return (
-    <html lang="en" className={theme} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <SectionContent>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem storageKey="theme">
+          <SectionContent>
+            {children}
+          </SectionContent>
+        </ThemeProvider>
           
-          {children}
-        </SectionContent>
       </body>
     </html>
   );

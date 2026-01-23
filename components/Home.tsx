@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { useSectionView } from "@/lib/hooks";
+import { useTheme } from "next-themes";
 
 export default function Home(){
 
@@ -19,9 +20,12 @@ export default function Home(){
         return ()=> window.removeEventListener("resize", ()=> {setsc(window.innerWidth)})
     },[])
 
+    // const {theme} = useTheme();
     return (
-        <section ref={sectionRef} id="home" className="h-full flex items-center">
-            <div className="text-center m-auto">Hi, I am Gerald A. Carvajal</div>
+        <section ref={sectionRef} id="home" className="h-full w-full flex flex-col items-center justify-center">
+            <div className="text-center">Hi, I am Gerald A. Carvajal</div>
+            <a href="">Mail</a>
+            {/* <h3>{theme}</h3> */}
         </section>
     )
 }
